@@ -7,7 +7,7 @@ import time
 # 测试函数
 def test_baidu_search():
     # 初始化浏览器驱动
-    options = web.ChromeOptions()
+    options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors-spki-list')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--ignore-ssl-errors')
