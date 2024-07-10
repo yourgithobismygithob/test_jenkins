@@ -1,11 +1,20 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service      
+from selenium.webdriver.chrome.options import Options
 import time
 # 测试函数
 def test_baidu_search():
     # 初始化浏览器驱动
-    driver = webdriver.Chrome()
+    options = web.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors-spki-list')
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--ignore-ssl-errors')
+    options.add_argument('--headless') 
+    s = Service('/usr/bin/chromedriver')    
+    driver = webdriver.Chrome(options=options,service=s) 
+    #cdriver = webdriver.Chrome()
 
     # 打开百度页面
     driver.get("http://www.baidu.com")
