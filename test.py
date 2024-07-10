@@ -13,7 +13,7 @@ def test_baidu_search():
     options.add_argument('--ignore-ssl-errors')
     options.add_argument('--headless') 
     s = Service('/usr/bin/chromedriver')    
-    driver = webdriver.Chrome(options=options) 
+    driver = webdriver.Chrome(options=options,service=s) 
     #cdriver = webdriver.Chrome()
 
     # 打开百度页面
